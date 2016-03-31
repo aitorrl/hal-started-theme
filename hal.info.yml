@@ -1,0 +1,22 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: 'Hal'
+description: 'Hal9000 starter theme'
+package: 'Bootstrap'
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  header: 'Top Bar'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer: 'Footer'
+  page_bottom: 'Page bottom'
+
+
+libraries:
+  - 'hal/global-styling'
+  # - 'hal/global-js'

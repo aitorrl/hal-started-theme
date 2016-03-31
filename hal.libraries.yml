@@ -1,0 +1,28 @@
+global-styling:
+  css:
+    theme:
+      css/overrides.min.css: {}
+      css/main.css: {}
+
+  js:
+    scripts/main.js: { scope: footer, weight: -6 }
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/modernizr
+
+#Vendor Library
+vendor:
+  version: 1.x
+  js:
+    scripts/vendor/pushy.js: { scope: footer, weight: -7 }
+
+
+# global-js:
+#   js:
+#     js/script.js: {}
+#  dependencies:
+#    - core/jquery
