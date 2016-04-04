@@ -43,7 +43,7 @@ in sites/default/services.yml edit:
 -----------------
 parameters:
   twig.config:
-    debug: true
+    debug: true (default is false)
 -----------------
 More info:
 https://www.drupal.org/node/1906392
