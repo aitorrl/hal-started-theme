@@ -3,7 +3,13 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
+var bower = require('gulp-bower');
 var reload = browserSync.reload;
+
+
+var config = {
+     bowerDir: './scripts/vendor/' 
+}
 
 // Error notifications
 var reportError = function(error) {
@@ -39,66 +45,16 @@ gulp.task('sass', function() {
     }));
 });
 
+gulp.task('bower', function() { 
+    return bower()
+         .pipe(gulp.dest(config.bowerDir)) 
+});
 // process JS files and return the stream.
 gulp.task('js', function () {
     return gulp.src('scripts/**/*.js')
         .pipe(gulp.dest('scripts'));
 });
 
-// // Optimize Images
-// gulp.task('images', function() {
-//   return gulp.src('images/**/*')
-//     .pipe($.imagemin({
-//       progressive: true,
-//       interlaced: true,
-//       svgoPlugins: [{
-//         cleanupIDs: false
-//       }]
-//     }))
-//     .pipe(gulp.dest('images'));
-// });
-
-// JS hint
-gulp.task('jshint', function() {
-  return gulp.src('scripts/*.js')
-    .pipe(reload({
-      stream: true,
-      once: true
-    }))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.notify({
-      title: "JS Hint",
-      message: "JS Hint todo es correcto!.",
-      onLast: true
-    }));
-});
-
-// Beautify JS
-gulp.task('beautify', function() {
-  gulp.src('scripts/*.js')
-    .pipe($.beautify({indentSize: 2}))
-    .pipe(gulp.dest('scripts'))
-    .pipe($.notify({
-      title: "JS Beautified",
-      message: "JS files in the theme have been beautified.",
-      onLast: true
-    }));
-});
-
-// Compress JS
-gulp.task('compress', function() {
-  return gulp.src('scripts/*.js')
-    .pipe($.sourcemaps.init())
-    .pipe($.uglify())
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('scripts'))
-    .pipe($.notify({
-      title: "JS Minified",
-      message: "JS files in the theme have been minified.",
-      onLast: true
-    }));
-});
 
 // Run drush to clear the theme registry
 gulp.task('drush', function() {
@@ -106,7 +62,7 @@ gulp.task('drush', function() {
       read: false
     })
     .pipe($.shell([
-      'drush cc css-js',
+      'drush cr css-js',
     ]))
     .pipe($.notify({
       title: "Caches cleared",

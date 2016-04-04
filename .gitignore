@@ -1,2 +1,24 @@
-# Ignore paths
-/node_modules
+coverage/
+node_modules/
+platforms/
+plugins/
+.DS_Store
+node_modules
+*.sw[mnpcod]
+*.log
+*.tmp
+*.tmp.*
+log.txt
+.sass-cache/
+framework.sublime-project
+framework.sublime-workspace
+UserInterfaceState.xcuserstate
+*.sublime-project
+*.sublime-workspace
+bower_components/
+tmp
+temp
+dist
+.idea
+.versions
+scripts/vendor

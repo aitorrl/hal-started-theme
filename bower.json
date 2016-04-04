@@ -1,0 +1,21 @@
+{
+  "name": "hal",
+  "description": "bower for Hal - Starter theme based in bootstrap for Drupal 8",
+  "main": "",
+  "authors": [
+    "Aitor <aitor.rl@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "matchHeight": "matchheight#~0.7.0"
+  }
+}

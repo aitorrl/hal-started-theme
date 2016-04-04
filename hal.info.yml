@@ -19,4 +19,4 @@ regions:
 
 libraries:
   - 'hal/global-styling'
-  # - 'hal/global-js'
+  - 'hal/vendor'
